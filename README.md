@@ -1,14 +1,14 @@
 # V4_compact_models
 Data, models, and code for the paper "Compact deep neural network models of visual cortex".
 
-This website is intended for researchers interested in computational models of visual cortical neurons (in this case primate V4). Please post any issues/questions that we may better clarify.
+This website is intended for researchers interested in computational models of visual cortical neurons (in this case primate V4). Please post any issues/questions in Issues that we may better clarify.
 
-We have made a user-friendly website that allows researcher and non-researchers (high school students, undergrads) to explore V4 neurons and deep neural network models:
-[link to V4.model.playground]
-Users can view preferred stimuli, explore filter weights, synthesize images, follow tutorials, and run their own Colab experiments on the compact models.
+We plan to release a user-friendly website that allows researcher and non-researchers (high school students, undergrads) to explore V4 neurons and deep neural network models:
+[link here soon]
+Users will be able to view preferred stimuli, explore filter weights, synthesize images, follow tutorials, and run their own Colab experiments on the compact models. Stay tuned!
 
 # Data
-Here, we store the processed V4 responses and images. 
+The processed V4 responses and images are stored in 
 You can access the raw spike recordings and other raw data here: [include link]
 
 ## Images
