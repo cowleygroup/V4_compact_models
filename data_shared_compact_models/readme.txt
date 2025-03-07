@@ -1,39 +1,20 @@
 
-These folders contain the models/weights of the compact models.
+These shared compact models correspond to Figure 3d in Cowley et al., bioRxiv 2023.
 
-Each compact model is for a single V4 neuron. We had 219 V4 neurons across
-4 recording sessions (held out from training the ensemble model), so we have
-219 compact models, indexed by session ID and neuron index.
+Shared compact models are trained on all 219 V4 neurons from 4 test sessions. They vary
+in the number of convolutional filters in the first 3 layers (the remaining layers have 
+100 filters): 5, 10, 25, 35, 50, 75, 100, 200 filters. They are trained either with distillation (i.e., as student models from some teacher model) or via direct fitting on V4 data.
 
-The compact model was identified by training on predicted responses of the
-ensemble model to 12 million images. To get the predicted responses of the ensemble
-model, we took half of the images in the test
-sessions to map the ensemble model embeddings to the V4 neurons. We use
-the remaining half of the images for evaluating test performance.
-Thus, the output response of a compact model directly maps to a single V4 neuron's
-response. In other words, you can treat the 219 compact models as 219 V4 neurons.
+The seven types are:
+from_ensemble_model: teacher model is the ensemble model (predicted responses to 12 million images)
+linear_from_ensemble_model: same as from_ensemble_model except shared compact model has no relus
+from_V4data_direct_fit: model trained entirely on V4 data in similar process as ensemble model
+from_resnet50: teacher model is ResNet50 (middle layer)
+from_resnet50_robust: teacher model is ResNet50_robust (middle layer)
+from_vgg19: teacher model is VGG19 (middle layer)
+from_cornets: teacher model is CORnet-S (middle layer)
 
-Note: Some compact models will output negative responses to a small number of images.
-This is likely due to model mismatch. In general, we ignore a compact model's overall
-mean and standard deviation; we show that the "wiggles" of the compact model match the
-"wiggles" of the V4 neuron across images.
+The input is a batch of images (num_images x 112 x 112 x 3) (they need to be re-centered).
+The output is a matrix of responses (219 neurons x num_images).
 
-architecture:
-The input image batch is (num_images,112,112,3). Each compact model has 5 convolutional 
-layers (layer 0 is full conv, the rest are separable convolutions) with layers 1 and 2 
-having stride 2. Each layer may have a different number of filters, as determined by
-the pruning step. The last layer is a dense layer that represents a spatial readout, as it
-linearly combines across filters and spatial information.
-An illustrative diagram of the model can be found in
-Ext. Data Fig. 1 in Cowley et al., bioRxiv 2023.
-
-You can see the Keras model summary for each compact model in ./model_summaries.
-We also saved the numbers of filters across layers for each compact model in ./nums_filters.
-
-For training the compact models, see ../code_distill_and_prune/
-
-Here we save the compact models and their weights with multiple versions for easy access.
-The most common types will be ./models_keras and ./models_torch. The rest of our code
-is in Keras/tensorflow.
-
-See ../script3_load_compact_models.py to load the compact models in various ways.
+Run script5_compute_R2s_shared_compact_models.py to see how R2s compare (reproducing Fig. 3d from our paper).
