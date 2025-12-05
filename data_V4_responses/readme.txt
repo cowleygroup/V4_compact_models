@@ -45,7 +45,7 @@ session ID | animal ID | train/test | # neurons | # repeats/image | # images | i
 201023 		PE 	    train 	  86 		7	      2000	normal (1,000), active learning (500), gaudy (500)
 201024 		PE 	    train 	  85 		7	      2000	normal (1,000), active learning (500), gaudy (500)
 201025 		PE 	    test 	  89		12	      1200	normal (1,200)
-210224 		PE 	    validation 	  67		9	      800	normal (800)
+210224 		PE 	    val 	  67		9	      800	normal (800)
 210225 		PE 	    test 	  55		6	      1200	normal (1,200)
 210226 		PE 	    train 	  78		6	      1600	normal (600), maximizing (1,000)
 210301 		PE 	    train 	  61		4	      2000	maximizing (650), validation exps. (1,350)
