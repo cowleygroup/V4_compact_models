@@ -35,7 +35,7 @@ session ID | animal ID | train/test | # neurons | # repeats/image | # images | i
 190927 		WE 	    train 	  31		11	      900	normal (600), active learning (300)
 190928 		WE 	    train 	  24		13	      900	normal (600), active learning (300) 
 190929 		WE 	    train 	  33		15	      900	normal (600), active learning (300)  
-201016 		PE 	    train 	  82		6	      900	normal (300), gaudy (300)
+201016 		PE 	    train 	  82		6	      600	normal (300), gaudy (300)
 201017 		PE 	    train 	  88		7	      900	normal (300), active learning (300), gaudy (300)  
 201018 		PE 	    train 	  80		5	      600	normal (600)
 201019 		PE 	    train 	  82		4	      1600	normal (800), active learning (400), gaudy (400)
