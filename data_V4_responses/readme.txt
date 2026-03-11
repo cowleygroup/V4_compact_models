@@ -1,4 +1,4 @@
-Readme for the V4 data in Cowley et al., bioRxiv, 2023.
+Readme for the V4 data in Cowley et al., 2026.
 
 This directory contains the V4 responses and images from all recording sessions. 
 A basic description of the data is below and in Ext. Data Table 1.
